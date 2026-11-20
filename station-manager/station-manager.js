@@ -5,6 +5,7 @@ let loggedInUser = JSON.parse(localStorage.getItem("fuelflowLoggedInUser"));
 if (!loggedInUser) {
   window.location.href = "../login/login.html";
 }
+console.log("Testing");
 
 /* Page Navigation */
 
@@ -102,10 +103,11 @@ stockForm.addEventListener("submit", function (event) {
   let stockItem = {
     fuel: document.getElementById("stockFuelType").value,
     quantity: document.getElementById("stockQuantity").value,
-    price: document.getElementById("stockPrice") &&
+    price:
+      document.getElementById("stockPrice") &&
       document.getElementById("stockPrice").value
-      ? document.getElementById("stockPrice").value
-      : "0.00",
+        ? document.getElementById("stockPrice").value
+        : "0.00",
   };
 
   let stock = getStock();
@@ -152,8 +154,7 @@ function showDailySales() {
   });
 
   document.getElementById("dailySalesCount").textContent = todaySales.length;
-  document.getElementById("dailyRevenue").textContent =
-    totalRevenue.toFixed(2);
+  document.getElementById("dailyRevenue").textContent = totalRevenue.toFixed(2);
 
   let list = document.getElementById("dailySalesList");
 
@@ -235,9 +236,7 @@ function showPrices() {
 
     card.appendChild(heading);
 
-    let details = [
-      ["Price Per Liter", item.price + " BDT"],
-    ];
+    let details = [["Price Per Liter", item.price + " BDT"]];
 
     details.forEach(function (itemDetail) {
       let p = document.createElement("p");
@@ -393,8 +392,7 @@ function showReports() {
     stockValue += parseFloat(item.quantity) * parseFloat(item.price);
   });
 
-  document.getElementById("totalRevenue").textContent =
-    totalRevenue.toFixed(2);
+  document.getElementById("totalRevenue").textContent = totalRevenue.toFixed(2);
   document.getElementById("stockValue").textContent = stockValue.toFixed(2);
 
   let list = document.getElementById("reportList");
@@ -421,7 +419,11 @@ function showReports() {
     let details = [
       ["Stock Quantity", item.quantity + " Liters"],
       ["Price Per Liter", item.price + " BDT"],
-      ["Stock Value", (parseFloat(item.quantity) * parseFloat(item.price)).toFixed(2) + " BDT"],
+      [
+        "Stock Value",
+        (parseFloat(item.quantity) * parseFloat(item.price)).toFixed(2) +
+          " BDT",
+      ],
     ];
 
     details.forEach(function (itemDetail) {
