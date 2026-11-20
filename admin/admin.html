@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pump Station Admin Panel</title>
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Pump Station Admin Panel</h1>
+      <div class="user-actions">
+        <span id="currentUsername"></span>
+      </div>
+    </header>
+
+    <div class="sidebar">
+      <div class="brand">
+        <h2>Vehicle Fuel</h2>
+        <p>Management System</p>
+      </div>
+
+      <div class="navigation">
+        <button class="nav-link active" data-page="dashboard">
+          📊 Dashboard
+        </button>
+        <button class="nav-link" data-page="user-accounts">
+          👥 User Accounts
+        </button>
+        <button class="nav-link" data-page="fuel-types">
+          ⛽ Fuel Types & Prices
+        </button>
+        <button class="nav-link" data-page="transactions">
+          🧾 Transactions
+        </button>
+        <button class="nav-link" data-page="station-info">
+          🏢 Station Information
+        </button>
+        <button class="nav-link" data-page="system-overview">
+          🖥️ System Overview
+        </button>
+        <button class="nav-link" data-page="settings">⚙️ Settings</button>
+      </div>
+
+      <button id="logoutBtn" class="logout">🚪 Logout</button>
+    </div>
+
+    <div class="main-content">
+      <!-- Dashboard -->
+
+      <section id="dashboard" class="page active-page">
+        <h2>Dashboard</h2>
+
+        <div class="ticket-counter">
+          <h3>Total Users</h3>
+
+          <h1 id="totalUsers">0</h1>
+        </div>
+
+        <div class="ticket-counter">
+          <h3>Fuel Types</h3>
+
+          <h1 id="totalFuelTypes">0</h1>
+        </div>
+
+        <div class="ticket-counter">
+          <h3>Total Transactions</h3>
+
+          <h1 id="totalTransactions">0</h1>
+        </div>
+
+        <p>
+          Welcome to the Admin panel. Use the sidebar to manage user accounts,
+          fuel types and prices, monitor transactions, and oversee station
+          information.
+        </p>
+      </section>
+
+      <!-- User Accounts -->
+
+      <section id="user-accounts" class="page">
+        <h2>Manage User Accounts</h2>
+
+        <form id="userForm">
+          <label for="userUsername">Username</label>
+          <input
+            type="text"
+            id="userUsername"
+            placeholder="Example: johndoe"
+            required
+          />
+
+          <label for="userPassword">Password</label>
+          <input
+            type="text"
+            id="userPassword"
+            placeholder="Example: pass123"
+            required
+          />
+
+          <label for="userRole">Role</label>
+          <select id="userRole" required>
+            <option value="">Select Role</option>
+            <option>Customer</option>
+            <option>Staff / Cashier</option>
+            <option>Station Manager</option>
+            <option>Admin</option>
+          </select>
+
+          <button type="submit" id="userFormBtn">Add User</button>
+          <button type="button" id="cancelEditBtn" style="display: none; margin-left: 8px;">Cancel</button>
+
+          <p id="userMessage"></p>
+        </form>
+
+        <h3>Search Users</h3>
+
+        <form id="searchForm">
+          <label for="searchRole">Filter by Role</label>
+          <select id="searchRole">
+            <option value="">All Roles</option>
+            <option>Customer</option>
+            <option>Staff / Cashier</option>
+            <option>Station Manager</option>
+            <option>Admin</option>
+          </select>
+
+          <label for="searchUsername">Username</label>
+          <input
+            type="text"
+            id="searchUsername"
+            placeholder="Enter username"
+          />
+
+          <label for="searchPassword">Password</label>
+          <input
+            type="text"
+            id="searchPassword"
+            placeholder="Enter password"
+          />
+
+          <button type="submit">Search</button>
+          <button type="button" id="clearSearchBtn">Clear</button>
+        </form>
+
+        <h3>Registered Users</h3>
+
+        <div id="userList">
+          <p>Use the search above to find users.</p>
+        </div>
+      </section>
+
+      <!-- Fuel Types & Prices -->
+
+      <section id="fuel-types" class="page">
+        <h2>Manage Fuel Types & Prices</h2>
+
+        <form id="fuelForm">
+          <label for="fuelName">Fuel Type</label>
+          <input
+            type="text"
+            id="fuelName"
+            placeholder="Example: Petrol, Octane, Diesel, CNG"
+            required
+          />
+
+          <label for="fuelPrice">Price Per Liter</label>
+          <input
+            type="number"
+            id="fuelPrice"
+            step="0.01"
+            min="0"
+            placeholder="Example: 110.00"
+            required
+          />
+
+          <button type="submit">Add / Update Fuel</button>
+
+          <p id="fuelMessage"></p>
+        </form>
+
+        <h3>Fuel Types List</h3>
+
+        <div id="fuelList">
+          <p>No fuel types defined yet.</p>
+        </div>
+      </section>
+
+      <!-- Transactions -->
+
+      <section id="transactions" class="page">
+        <h2>Monitor Transactions</h2>
+
+        <div class="ticket-counter">
+          <h3>Total Transactions</h3>
+
+          <h1 id="transactionCount">0</h1>
+        </div>
+
+        <div class="ticket-counter">
+          <h3>Total Revenue</h3>
+
+          <h1 id="transactionRevenue">0.00</h1>
+        </div>
+
+        <h3>Transaction Log</h3>
+
+        <div id="transactionList">
+          <p>No transactions found.</p>
+        </div>
+      </section>
+
+      <!-- Station Information -->
+
+      <section id="station-info" class="page">
+        <h2>Station Information</h2>
+
+        <form id="stationForm">
+          <label for="stationName">Station Name</label>
+          <input
+            type="text"
+            id="stationName"
+            placeholder="Example: ABC Fuel Station"
+            required
+          />
+
+          <label for="stationAddress">Address</label>
+          <textarea
+            id="stationAddress"
+            rows="4"
+            placeholder="Enter station address..."
+            required
+          ></textarea>
+
+          <label for="stationContact">Contact Number</label>
+          <input
+            type="text"
+            id="stationContact"
+            placeholder="Example: +880 1xxx-xxxxxx"
+            required
+          />
+
+          <button type="submit">Save Station Info</button>
+
+          <p id="stationMessage"></p>
+        </form>
+
+        <h3>Current Station Details</h3>
+
+        <div id="stationDetails">
+          <p>No station information saved yet.</p>
+        </div>
+      </section>
+
+      <!-- System Overview -->
+
+      <section id="system-overview" class="page">
+        <h2>System Overview</h2>
+
+        <div class="ticket-counter">
+          <h3>Registered Users</h3>
+
+          <h1 id="sysUsers">0</h1>
+        </div>
+
+        <div class="ticket-counter">
+          <h3>Fuel Types</h3>
+
+          <h1 id="sysFuelTypes">0</h1>
+        </div>
+
+        <div class="ticket-counter">
+          <h3>Total Transactions</h3>
+
+          <h1 id="sysTransactions">0</h1>
+        </div>
+
+        <div class="ticket-counter">
+          <h3>Total Revenue</h3>
+
+          <h1 id="sysRevenue">0.00</h1>
+        </div>
+
+        <h3>System Activity</h3>
+
+        <div id="systemActivity">
+          <p>No activity data available.</p>
+        </div>
+      </section>
+
+      <!-- Settings -->
+
+      <section id="settings" class="page">
+        <h2>Settings</h2>
+
+        <h3>Update Password</h3>
+
+        <form id="passwordForm">
+          <label for="currentPassword">Current Password</label>
+          <input type="password" id="currentPassword" required />
+
+          <label for="newPassword">New Password</label>
+          <input type="password" id="newPassword" minlength="8" required />
+
+          <label for="confirmPassword">Confirm New Password</label>
+          <input type="password" id="confirmPassword" minlength="8" required />
+
+          <button type="submit">Update Password</button>
+
+          <p id="passwordMessage"></p>
+        </form>
+      </section>
+    </div>
+
+    <footer>© 2026 Vehicle Fuel Management System</footer>
+
+    <script src="admin.js"></script>
+  </body>
+</html>

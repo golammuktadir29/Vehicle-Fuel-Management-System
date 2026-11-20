@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pump Station Manager Panel</title>
+    <link rel="stylesheet" href="station-manager.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Pump Station Manager Panel</h1>
+      <div class="user-actions">
+        <span id="currentUsername"></span>
+      </div>
+    </header>
+
+    <div class="sidebar">
+      <div class="brand">
+        <h2>Vehicle Fuel</h2>
+        <p>Management System</p>
+      </div>
+
+      <div class="navigation">
+        <button class="nav-link active" data-page="dashboard">
+          📊 Dashboard
+        </button>
+        <button class="nav-link" data-page="fuel-stock">
+          ⛽ Fuel Stock
+        </button>
+        <button class="nav-link" data-page="daily-sales">
+          💰 Daily Sales
+        </button>
+        <button class="nav-link" data-page="update-prices">
+          💲 Update Prices
+        </button>
+        <button class="nav-link" data-page="inventory">
+          📦 Inventory
+        </button>
+        <button class="nav-link" data-page="reports">
+          📈 Reports
+        </button>
+        <button class="nav-link" data-page="settings">⚙️ Settings</button>
+      </div>
+
+      <button id="logoutBtn" class="logout">🚪 Logout</button>
+    </div>
+
+    <div class="main-content">
+      <!-- Dashboard -->
+
+      <section id="dashboard" class="page active-page">
+        <h2>Dashboard</h2>
+
+        <div class="ticket-counter">
+          <h3>Total Fuel Types</h3>
+
+          <h1 id="fuelTypesCount">0</h1>
+        </div>
+
+        <div class="ticket-counter">
+          <h3>Total Stock (Liters)</h3>
+
+          <h1 id="totalStock">0</h1>
+        </div>
+
+        <div class="ticket-counter">
+          <h3>Today's Sales</h3>
+
+          <h1 id="todaysSales">0.00</h1>
+        </div>
+
+        <p>
+          Welcome to the Station Manager panel. Use the sidebar to manage fuel
+          stock, update prices, track inventory, and view sales reports.
+        </p>
+      </section>
+
+      <!-- Fuel Stock -->
+
+      <section id="fuel-stock" class="page">
+        <h2>Manage Fuel Stock</h2>
+
+        <form id="stockForm">
+          <label for="stockFuelType">Fuel Type</label>
+          <select id="stockFuelType" required>
+            <option value="">Select Fuel Type</option>
+            <option>Petrol</option>
+            <option>Octane</option>
+            <option>Diesel</option>
+            <option>CNG</option>
+          </select>
+
+          <label for="stockQuantity">Available Quantity (Liters)</label>
+          <input
+            type="number"
+            id="stockQuantity"
+            step="0.01"
+            min="0"
+            placeholder="Example: 5000"
+            required
+          />
+
+          <button type="submit">Update Stock</button>
+
+          <p id="stockMessage"></p>
+        </form>
+
+        <h3>Current Stock</h3>
+
+        <div id="stockList">
+          <p>No stock records yet.</p>
+        </div>
+      </section>
+
+      <!-- Daily Sales -->
+
+      <section id="daily-sales" class="page">
+        <h2>Daily Sales</h2>
+
+        <div class="ticket-counter">
+          <h3>Total Sales Today</h3>
+
+          <h1 id="dailySalesCount">0</h1>
+        </div>
+
+        <div class="ticket-counter">
+          <h3>Revenue Today</h3>
+
+          <h1 id="dailyRevenue">0.00</h1>
+        </div>
+
+        <h3>Sales History</h3>
+
+        <div id="dailySalesList">
+          <p>No sales recorded yet.</p>
+        </div>
+      </section>
+
+      <!-- Update Prices -->
+
+      <section id="update-prices" class="page">
+        <h2>Update Fuel Prices</h2>
+
+        <form id="priceForm">
+          <label for="priceFuelType">Fuel Type</label>
+          <select id="priceFuelType" required>
+            <option value="">Select Fuel Type</option>
+            <option>Petrol</option>
+            <option>Octane</option>
+            <option>Diesel</option>
+            <option>CNG</option>
+          </select>
+
+          <label for="newPrice">New Price Per Liter</label>
+          <input
+            type="number"
+            id="newPrice"
+            step="0.01"
+            min="0"
+            placeholder="Example: 110.00"
+            required
+          />
+
+          <button type="submit">Update Price</button>
+
+          <p id="priceMessage"></p>
+        </form>
+
+        <h3>Current Fuel Prices</h3>
+
+        <div id="priceList">
+          <p>No price records yet.</p>
+        </div>
+      </section>
+
+      <!-- Inventory -->
+
+      <section id="inventory" class="page">
+        <h2>Fuel Purchases &amp; Inventory</h2>
+
+        <form id="purchaseForm">
+          <label for="purchaseFuelType">Fuel Type</label>
+          <select id="purchaseFuelType" required>
+            <option value="">Select Fuel Type</option>
+            <option>Petrol</option>
+            <option>Octane</option>
+            <option>Diesel</option>
+            <option>CNG</option>
+          </select>
+
+          <label for="purchaseQuantity">Purchased Quantity (Liters)</label>
+          <input
+            type="number"
+            id="purchaseQuantity"
+            step="0.01"
+            min="0.01"
+            placeholder="Example: 10000"
+            required
+          />
+
+          <label for="purchaseCost">Total Purchase Cost</label>
+          <input
+            type="number"
+            id="purchaseCost"
+            step="0.01"
+            min="0"
+            placeholder="Example: 1100000"
+            required
+          />
+
+          <button type="submit">Record Purchase</button>
+
+          <p id="purchaseMessage"></p>
+        </form>
+
+        <h3>Purchase History</h3>
+
+        <div id="purchaseList">
+          <p>No purchases recorded yet.</p>
+        </div>
+      </section>
+
+      <!-- Reports -->
+
+      <section id="reports" class="page">
+        <h2>Sales &amp; Stock Reports</h2>
+
+        <div class="ticket-counter">
+          <h3>Total Revenue</h3>
+
+          <h1 id="totalRevenue">0.00</h1>
+        </div>
+
+        <div class="ticket-counter">
+          <h3>Total Stock Value</h3>
+
+          <h1 id="stockValue">0.00</h1>
+        </div>
+
+        <h3>Stock Summary</h3>
+
+        <div id="reportList">
+          <p>No report data available.</p>
+        </div>
+      </section>
+
+      <!-- Settings -->
+
+      <section id="settings" class="page">
+        <h2>Settings</h2>
+
+        <h3>Update Password</h3>
+
+        <form id="passwordForm">
+          <label for="currentPassword">Current Password</label>
+          <input type="password" id="currentPassword" required />
+
+          <label for="newPassword">New Password</label>
+          <input type="password" id="newPassword" minlength="8" required />
+
+          <label for="confirmPassword">Confirm New Password</label>
+          <input type="password" id="confirmPassword" minlength="8" required />
+
+          <button type="submit">Update Password</button>
+
+          <p id="passwordMessage"></p>
+        </form>
+      </section>
+    </div>
+
+    <footer>© 2026 Vehicle Fuel Management System</footer>
+
+    <script src="station-manager.js"></script>
+  </body>
+</html>

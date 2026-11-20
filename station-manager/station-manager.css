@@ -1,0 +1,266 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f3eee6;
+  color: #39332e;
+  line-height: 1.45;
+}
+
+header {
+  background: #faf7f1;
+  padding: 12px 24px;
+  border-bottom: 1px solid #d8cbbb;
+  overflow: hidden;
+}
+
+header h1 {
+  color: #503c2e;
+  display: inline-block;
+  font-size: 24px;
+  font-weight: 600;
+  margin: 9px 0;
+}
+
+.user-actions {
+  float: right;
+  margin-top: 14px;
+}
+
+#currentUsername {
+  margin-right: 8px;
+}
+
+/* sidebar */
+.sidebar {
+  float: left;
+  width: 228px;
+  min-height: 640px;
+  padding: 16px 18px;
+  box-sizing: border-box;
+  background: #e9dfd1;
+}
+
+.brand {
+  text-align: center;
+  border-bottom: 1px solid #cdbda8;
+  padding-bottom: 14px;
+}
+
+.brand h2 {
+  color: #624833;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.navigation button {
+  display: block;
+  width: 100%;
+  margin: 6px 0;
+  padding: 10px 12px;
+  text-align: left;
+  background: none;
+  border: 0;
+  border-radius: 2px;
+  cursor: pointer;
+  color: #493d32;
+  font-size: 14px;
+}
+
+.navigation button:hover,
+.navigation button.active {
+  background: #d5c2aa;
+  color: #493322;
+}
+
+.logout {
+  width: 100%;
+  margin-top: 22px;
+  padding: 9px;
+  background: #a94442;
+  color: #fff;
+  border: 0;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.logout:hover {
+  background: #8a3634;
+}
+
+/* main */
+.main-content {
+  margin-left: 228px;
+  padding: 24px 28px;
+}
+
+.page {
+  display: none;
+  min-height: 540px;
+  padding: 24px;
+  background: #fcfaf6;
+  border: 1px solid #e2d8ca;
+  border-radius: 2px;
+}
+.page.active-page {
+  display: block;
+}
+
+h2,
+h3 {
+  color: #503c2e;
+  font-weight: 600;
+}
+h2 {
+  margin: 4px 0 16px;
+}
+
+form {
+  width: 100%;
+}
+
+label {
+  display: block;
+  margin: 12px 0 4px;
+  font-weight: 600;
+  font-size: 13.5px;
+  color: #51483f;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 9px 10px;
+  margin-bottom: 10px;
+  border: 1px solid #cdc3b5;
+  border-radius: 2px;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  background: #fffdf8;
+  color: #39332e;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #8f7050;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button[type="submit"] {
+  background: #76583e;
+  color: #fff;
+  border: 0;
+  padding: 9px 16px;
+  cursor: pointer;
+  border-radius: 2px;
+}
+button[type="submit"]:hover {
+  background: #5b422f;
+}
+
+button[type="button"] {
+  background: #76583e;
+  color: #fff;
+  border: 0;
+  padding: 9px 16px;
+  margin-right: 8px;
+  cursor: pointer;
+  border-radius: 2px;
+}
+button[type="button"]:hover {
+  background: #5b422f;
+}
+
+/* stock cards */
+.stock-card,
+.purchase-card,
+.sales-card {
+  margin: 14px 0;
+  padding: 14px 16px;
+  background: #f8f4ed;
+  border: 1px solid #e2d8ca;
+  border-left: 3px solid #a48767;
+  border-radius: 2px;
+}
+
+.stock-card h3,
+.purchase-card h3,
+.sales-card h3 {
+  color: #604630;
+  margin-top: 0;
+}
+
+/* counter */
+.ticket-counter {
+  width: 216px;
+  padding: 11px;
+  margin: 14px 0 18px;
+  text-align: center;
+  background: #f0e5d6;
+  border: 1px solid #d8c8b4;
+  border-radius: 2px;
+  box-sizing: border-box;
+}
+
+.ticket-counter h1 {
+  color: #704b35;
+  font-size: 28px;
+  margin: 4px 0;
+}
+
+/* status messages */
+#stockMessage,
+#priceMessage,
+#purchaseMessage,
+#reportMessage,
+#passwordMessage {
+  color: #47734b;
+  font-size: 13.5px;
+}
+
+.empty-message {
+  color: #766b60;
+}
+
+footer {
+  clear: both;
+  padding: 16px;
+  background: #faf7f1;
+  border-top: 1px solid #d8cbbb;
+  text-align: center;
+  color: #766b60;
+  font-size: 12.5px;
+}
+
+/* small screens */
+@media (max-width: 700px) {
+  .sidebar {
+    float: none;
+    width: 100%;
+    min-height: 0;
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: 14px;
+  }
+
+  .user-actions {
+    float: none;
+    margin: 4px 0;
+  }
+
+  header h1 {
+    font-size: 19px;
+  }
+  .page {
+    padding: 15px;
+  }
+  .ticket-counter {
+    max-width: 100%;
+  }
+}
