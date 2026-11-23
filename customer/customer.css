@@ -1,5 +1,5 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: sans-serif, Arial;
   margin: 0;
   background: #f3eee6;
   color: #39332e;
@@ -7,33 +7,30 @@ body {
 }
 
 header {
-  background: #faf7f1;
-  padding: 12px 24px;
-  border-bottom: 1px solid #d8cbbb;
-  overflow: hidden;
+  padding: 5px 15px;
+  border-bottom: 3px solid #d3cfca;
+  /* overflow: hidden; */
 }
 
 header h1 {
   color: #503c2e;
   display: inline-block;
-  font-size: 24px;
-  font-weight: 600;
-  margin: 9px 0;
+  font-size: 25px;
 }
 
 .user-actions {
   float: right;
-  margin-top: 14px;
+  margin-top: 15px;
 }
 
 #currentUsername {
-  margin-right: 8px;
+  margin-right: 10px;
 }
 
 /* sidebar */
 .sidebar {
   float: left;
-  width: 228px;
+  width: 230px;
   min-height: 640px;
   padding: 16px 18px;
   box-sizing: border-box;
@@ -88,17 +85,16 @@ header h1 {
 
 /* main */
 .main-content {
-  margin-left: 228px;
-  padding: 24px 28px;
+  margin-left: 230px;
 }
 
 .page {
   display: none;
-  min-height: 540px;
-  padding: 24px;
+
+  padding: 5px 25px;
   background: #fcfaf6;
   border: 1px solid #e2d8ca;
-  border-radius: 2px;
+  border-radius: 3px;
 }
 .page.active-page {
   display: block;
@@ -131,10 +127,10 @@ textarea {
   width: 100%;
   padding: 9px 10px;
   margin-bottom: 10px;
-  border: 1px solid #cdc3b5;
-  border-radius: 2px;
+  border: 3px solid #cdc3b5;
+  border-radius: 5px;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: sans-serif;
   background: #fffdf8;
   color: #39332e;
 }

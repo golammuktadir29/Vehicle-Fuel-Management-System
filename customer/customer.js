@@ -21,29 +21,29 @@ navButtons.forEach(function (button) {
 
 /* Username */
 
-const setUsernameBtn = document.getElementById("setUsernameBtn");
+// const setUsernameBtn = document.getElementById("setUsernameBtn");
 
-function displayUsername() {
-  let username = localStorage.getItem("fuelflowUsername");
+// function displayUsername() {
+//   let username = localStorage.getItem("fuelflowUsername");
 
-  document.getElementById("currentUsername").textContent = username
-    ? "Hello, " + username
-    : "";
+//   document.getElementById("currentUsername").textContent = username
+//     ? "Hello, " + username
+//     : "";
 
-  setUsernameBtn.textContent = username ? "Change Username" : "Set Username";
-}
+//   setUsernameBtn.textContent = username ? "Change Username" : "Set Username";
+// }
 
-displayUsername();
+// displayUsername();
 
-setUsernameBtn.addEventListener("click", function () {
-  let username = prompt("Enter your username:");
+// setUsernameBtn.addEventListener("click", function () {
+//   let username = prompt("Enter your username:");
 
-  if (username && username.trim() !== "") {
-    localStorage.setItem("fuelflowUsername", username.trim());
+//   if (username && username.trim() !== "") {
+//     localStorage.setItem("fuelflowUsername", username.trim());
 
-    displayUsername();
-  }
-});
+//     displayUsername();
+//   }
+// });
 
 /* Reservation System */
 
