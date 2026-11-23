@@ -1,16 +1,12 @@
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  background: #f3eee6;
-  color: #39332e;
-  line-height: 1.45;
 }
 
 header {
   background: #faf7f1;
   padding: 12px 24px;
-  border-bottom: 1px solid #d8cbbb;
-  overflow: hidden;
+  border-bottom: 3px solid #d8cbbb;
 }
 
 header h1 {
@@ -26,10 +22,6 @@ header h1 {
   margin-top: 14px;
 }
 
-#currentUsername {
-  margin-right: 8px;
-}
-
 /* sidebar */
 .sidebar {
   float: left;
@@ -38,18 +30,6 @@ header h1 {
   padding: 16px 18px;
   box-sizing: border-box;
   background: #e9dfd1;
-}
-
-.brand {
-  text-align: center;
-  border-bottom: 1px solid #cdbda8;
-  padding-bottom: 14px;
-}
-
-.brand h2 {
-  color: #624833;
-  font-size: 20px;
-  font-weight: 600;
 }
 
 .navigation button {
@@ -89,16 +69,15 @@ header h1 {
 /* main */
 .main-content {
   margin-left: 228px;
-  padding: 24px 28px;
 }
 
 .page {
   display: none;
-  min-height: 540px;
-  padding: 24px;
+  height: 630px;
+  padding: 5px 25px;
   background: #fcfaf6;
   border: 1px solid #e2d8ca;
-  border-radius: 2px;
+  border-radius: 3px;
 }
 .page.active-page {
   display: block;
@@ -224,43 +203,4 @@ button[type="button"]:hover {
 
 .empty-message {
   color: #766b60;
-}
-
-footer {
-  clear: both;
-  padding: 16px;
-  background: #faf7f1;
-  border-top: 1px solid #d8cbbb;
-  text-align: center;
-  color: #766b60;
-  font-size: 12.5px;
-}
-
-/* small screens */
-@media (max-width: 700px) {
-  .sidebar {
-    float: none;
-    width: 100%;
-    min-height: 0;
-  }
-
-  .main-content {
-    margin-left: 0;
-    padding: 14px;
-  }
-
-  .user-actions {
-    float: none;
-    margin: 4px 0;
-  }
-
-  header h1 {
-    font-size: 19px;
-  }
-  .page {
-    padding: 15px;
-  }
-  .ticket-counter {
-    max-width: 100%;
-  }
 }

@@ -1,30 +1,17 @@
 body {
   font-family: sans-serif, Arial;
   margin: 0;
-  background: #f3eee6;
-  color: #39332e;
-  line-height: 1.45;
 }
 
 header {
-  padding: 5px 15px;
+  padding: 0px 5px;
   border-bottom: 3px solid #d3cfca;
-  /* overflow: hidden; */
 }
 
 header h1 {
   color: #503c2e;
-  display: inline-block;
+
   font-size: 25px;
-}
-
-.user-actions {
-  float: right;
-  margin-top: 15px;
-}
-
-#currentUsername {
-  margin-right: 10px;
 }
 
 /* sidebar */
@@ -32,35 +19,23 @@ header h1 {
   float: left;
   width: 230px;
   min-height: 640px;
-  padding: 16px 18px;
+  padding: 15px 15px;
   box-sizing: border-box;
   background: #e9dfd1;
-}
-
-.brand {
-  text-align: center;
-  border-bottom: 1px solid #cdbda8;
-  padding-bottom: 14px;
-}
-
-.brand h2 {
-  color: #624833;
-  font-size: 20px;
-  font-weight: 600;
 }
 
 .navigation button {
   display: block;
   width: 100%;
   margin: 6px 0;
-  padding: 10px 12px;
+  padding: 10px 10px;
   text-align: left;
   background: none;
   border: 0;
-  border-radius: 2px;
+
   cursor: pointer;
   color: #493d32;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .navigation button:hover,
@@ -71,12 +46,12 @@ header h1 {
 
 .logout {
   width: 100%;
-  margin-top: 22px;
-  padding: 9px;
+  margin-top: 25px;
+  padding: 10px;
   background: #a94442;
   color: #fff;
   border: 0;
-  border-radius: 2px;
+
   cursor: pointer;
 }
 .logout:hover {
@@ -90,7 +65,7 @@ header h1 {
 
 .page {
   display: none;
-
+  height: 630px;
   padding: 5px 25px;
   background: #fcfaf6;
   border: 1px solid #e2d8ca;
@@ -204,43 +179,4 @@ button[type="submit"]:hover {
 
 .empty-message {
   color: #766b60;
-}
-
-footer {
-  clear: both;
-  padding: 16px;
-  background: #faf7f1;
-  border-top: 1px solid #d8cbbb;
-  text-align: center;
-  color: #766b60;
-  font-size: 12.5px;
-}
-
-/* small screens */
-@media (max-width: 700px) {
-  .sidebar {
-    float: none;
-    width: 100%;
-    min-height: 0;
-  }
-
-  .main-content {
-    margin-left: 0;
-    padding: 14px;
-  }
-
-  .user-actions {
-    float: none;
-    margin: 4px 0;
-  }
-
-  header h1 {
-    font-size: 19px;
-  }
-  .page {
-    padding: 15px;
-  }
-  .ticket-counter {
-    max-width: 100%;
-  }
 }

@@ -1,9 +1,6 @@
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  background: #f3eee6;
-  color: #39332e;
-  line-height: 1.45;
 }
 
 header {
@@ -24,10 +21,6 @@ header h1 {
 .user-actions {
   float: right;
   margin-top: 14px;
-}
-
-#currentUsername {
-  margin-right: 8px;
 }
 
 /* sidebar */
@@ -89,16 +82,15 @@ header h1 {
 /* main */
 .main-content {
   margin-left: 228px;
-  padding: 24px 28px;
 }
 
 .page {
   display: none;
-  min-height: 540px;
-  padding: 24px;
+  height: 630px;
+  padding: 5px 25px;
   background: #fcfaf6;
   border: 1px solid #e2d8ca;
-  border-radius: 2px;
+  border-radius: 3px;
 }
 .page.active-page {
   display: block;
@@ -239,33 +231,4 @@ footer {
   text-align: center;
   color: #766b60;
   font-size: 12.5px;
-}
-
-/* small screens */
-@media (max-width: 700px) {
-  .sidebar {
-    float: none;
-    width: 100%;
-    min-height: 0;
-  }
-
-  .main-content {
-    margin-left: 0;
-    padding: 14px;
-  }
-
-  .user-actions {
-    float: none;
-    margin: 4px 0;
-  }
-
-  header h1 {
-    font-size: 19px;
-  }
-  .page {
-    padding: 15px;
-  }
-  .ticket-counter {
-    max-width: 100%;
-  }
 }

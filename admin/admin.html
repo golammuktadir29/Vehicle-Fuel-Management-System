@@ -15,34 +15,25 @@
     </header>
 
     <div class="sidebar">
-      <div class="brand">
-        <h2>Vehicle Fuel</h2>
-        <p>Management System</p>
-      </div>
-
       <div class="navigation">
-        <button class="nav-link active" data-page="dashboard">
-          📊 Dashboard
-        </button>
+        <button class="nav-link active" data-page="dashboard">Dashboard</button>
         <button class="nav-link" data-page="user-accounts">
-          👥 User Accounts
+          User Accounts
         </button>
         <button class="nav-link" data-page="fuel-types">
-          ⛽ Fuel Types & Prices
+          Fuel Types & Prices
         </button>
-        <button class="nav-link" data-page="transactions">
-          🧾 Transactions
-        </button>
+        <button class="nav-link" data-page="transactions">Transactions</button>
         <button class="nav-link" data-page="station-info">
-          🏢 Station Information
+          Station Information
         </button>
         <button class="nav-link" data-page="system-overview">
-          🖥️ System Overview
+          System Overview
         </button>
-        <button class="nav-link" data-page="settings">⚙️ Settings</button>
+        <button class="nav-link" data-page="settings">Settings</button>
       </div>
 
-      <button id="logoutBtn" class="logout">🚪 Logout</button>
+      <button id="logoutBtn" class="logout">Logout</button>
     </div>
 
     <div class="main-content">
@@ -108,7 +99,13 @@
           </select>
 
           <button type="submit" id="userFormBtn">Add User</button>
-          <button type="button" id="cancelEditBtn" style="display: none; margin-left: 8px;">Cancel</button>
+          <button
+            type="button"
+            id="cancelEditBtn"
+            style="display: none; margin-left: 8px"
+          >
+            Cancel
+          </button>
 
           <p id="userMessage"></p>
         </form>
@@ -126,18 +123,10 @@
           </select>
 
           <label for="searchUsername">Username</label>
-          <input
-            type="text"
-            id="searchUsername"
-            placeholder="Enter username"
-          />
+          <input type="text" id="searchUsername" placeholder="Enter username" />
 
           <label for="searchPassword">Password</label>
-          <input
-            type="text"
-            id="searchPassword"
-            placeholder="Enter password"
-          />
+          <input type="text" id="searchPassword" placeholder="Enter password" />
 
           <button type="submit">Search</button>
           <button type="button" id="clearSearchBtn">Clear</button>
@@ -311,8 +300,6 @@
         </form>
       </section>
     </div>
-
-    <footer>© 2026 Vehicle Fuel Management System</footer>
 
     <script src="admin.js"></script>
   </body>
