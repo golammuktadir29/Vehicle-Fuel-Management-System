@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up - Vehicle Fuel Management System</title>
+  <link rel="stylesheet" href="signup.css" />
+</head>
+<body>
+
+  <div class="top-bar"></div>
+
+  <div class="container">
+    <h2 class="title">Vehicle Fuel</h2>
+    <p class="subtitle">Management System</p>
+    <hr class="divider" />
+
+    <form id="signupForm">
+      <!-- Role Selection -->
+      <!-- <div class="form-group">
+        <label for="role">Role</label>
+        <select id="role">
+          <option value="Customer / Vehicle Owner">Customer / Vehicle Owner</option>
+          <option value="Fuel Station Staff / Cashier">Fuel Station Staff / Cashier</option>
+          <option value="Station Manager">Station Manager</option>
+          <option value="Admin">Admin</option>
+        </select>
+      </div> -->
+
+      <!-- Full Name -->
+      <div class="form-group">
+        <label for="fullName">Full Name</label>
+        <input type="text" id="fullName" placeholder="Enter your full name" />
+      </div>
+
+      <!-- Email -->
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter your email" />
+      </div>
+
+      <!-- Phone Number -->
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="text" id="phone" placeholder="Enter your phone number" />
+      </div>
+
+      <!-- Vehicle Details (Only for Customer / Vehicle Owner) -->
+      <div id="vehicleSection">
+        <div class="form-group">
+          <label for="vehicleType">Vehicle Type</label>
+          <select id="vehicleType">
+            <option value="">Select vehicle type</option>
+            <option value="Car">Car</option>
+            <option value="Bike">Bike</option>
+            <option value="Pickup">Pickup</option>
+            <option value="Van">Van</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="vehicleNumber">Vehicle Registration Number</label>
+          <input type="text" id="vehicleNumber" placeholder="Enter vehicle number" />
+        </div>
+      </div>
+
+      <!-- Password -->
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter your password" />
+      </div>
+
+      <!-- Confirm Password -->
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" id="confirmPassword" placeholder="Re-enter your password" />
+      </div>
+
+      <button type="submit">Sign Up</button>
+    </form>
+
+    <p id="message"></p>
+  </div>
+
+  <script src="signup.js"></script>
+</body>
+</html>
